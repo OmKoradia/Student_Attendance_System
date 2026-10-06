@@ -52,7 +52,7 @@ function App() {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/branches")
+    fetch("https://student-attendance-backend-d2wd.onrender.com/branches")
       .then((response) => response.json())
       .then((data) => {
 
@@ -74,7 +74,7 @@ function App() {
 
   const loadAttendanceRecords = () => {
 
-    fetch("http://localhost:5000/attendance-records")
+    fetch("https://student-attendance-backend-d2wd.onrender.com/attendance-records")
       .then((response) => response.json())
       .then((data) => {
 
@@ -126,7 +126,7 @@ function App() {
 
 
     fetch(
-      `http://localhost:5000/divisions/${branchId}`
+      `https://student-attendance-backend-d2wd.onrender.com/divisions/${branchId}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -161,7 +161,7 @@ function App() {
 
 
     fetch(
-      `http://localhost:5000/students/${selectedDivision}`
+      `https://student-attendance-backend-d2wd.onrender.com/students/${selectedDivision}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -236,7 +236,7 @@ function App() {
       for (const student of students) {
 
         await fetch(
-          "http://localhost:5000/attendance",
+          "https://student-attendance-backend-d2wd.onrender.com/attendance",
           {
 
             method: "POST",
@@ -301,7 +301,7 @@ function App() {
 
 
       fetch(
-        `http://localhost:5000/attendance-details/${record.attendance_date}/${record.division_id || getDivisionId(record)}`
+        `https://student-attendance-backend-d2wd.onrender.com/attendance-details/${record.attendance_date}/${record.division_id || getDivisionId(record)}`
       )
         .then((response) => response.json())
         .then((data) => {
